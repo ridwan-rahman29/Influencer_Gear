@@ -47,8 +47,8 @@ a{
 #form_sec {
     background-image: url('../images/bgSlice.svg');
     background-repeat: no-repeat;
-    background-position: right;
-    padding: 120px 0 180px;
+    background-position: top right;
+    padding: 70px 0 180px;
 }
 
 .form_sec {
@@ -61,13 +61,35 @@ a{
     border-radius: 10px;
 }
 
-.form_sec form input[type="email"], input[type="password"] {
+.form_sec input, label{
+    display: block;
+}
+
+.form_sec form input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
     width: 100%;
     background-color: var(--input-bg);
-    border: navajowhite;
+    border: none;
     border-radius: 6px;
     height: 50px;
     margin-bottom: 20px;
+    outline: none;
+    color: #91897e;
+    padding-left: 10px;
+}
+
+.form_sec form input[type="text"], input[type="email"], input[type="password"]::placeholder{
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.selection_box select {
+    background-color: var(--input-bg);
+    color: #91897e;
+    outline: none;
+    border: none;
+    padding: 3px 6px;
+    border-radius: 5px;
+    font-weight: 500;
 }
 
 .form_sec h1 {
@@ -76,28 +98,8 @@ a{
     margin-bottom: 30px;
 }
 
-.oth_btns {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.oth_btns label, a {
-    font-size: 12px;
-    text-transform: capitalize;
-    color: var(--text-bg);
-    cursor: pointer;
-}
-
-.oth_btns div a {
-    color: var(--text-bg-two) !important;
-    text-decoration: underline !important;
-    font-weight: 600;
-}
-
-input[type="submit"] {
-    width: 100%;
+input[type="submit"], input[type="reset"] {
+    width: 50%;
     height: 50px;
     background: transparent;
     border: 1px solid #384fde;
@@ -109,13 +111,8 @@ input[type="submit"] {
     transition: background 0.3s ease;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover, input[type="reset"]:hover {
     background: var(--btn-hover);
-}
-
-.oth_btns div:first-child {
-    display: flex;
-    gap: 10px;
 }
 
 .reges_link {
@@ -130,6 +127,19 @@ input[type="submit"]:hover {
 .reges_link p a {
     color: rgb(25, 118, 210) !important;
     margin-left: 4px;
+    font-size: 12px;
+}
+
+.form_sec form div label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.gend label {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    display: inline-block;
 }
 
 /* Login Form Section End */
@@ -178,12 +188,6 @@ input[type="submit"]:hover {
 
     .form_sec form {
         padding: 20px;
-    }
-    
-    .oth_btns {
-        flex-direction: column;
-        align-items: baseline;
-        gap: 10px;
     }
 
     #form_sec {
